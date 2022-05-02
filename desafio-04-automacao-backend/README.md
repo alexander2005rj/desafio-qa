@@ -1,11 +1,10 @@
 # Desafio 04 - Automação Backend
 
-## Detalhes sobre a organização dos desafios
+## Detalhes sobre a organização deste desafio
 
-Estes desafios está organizado da seguinte forma:
+Este desafio está organizado da seguinte forma:
 
 ```bash
-
 ├── desafio-04-automacao-mobile
 │   ├── mochawesome-report (onde são salvos os relatórios)
 │   │   ├── *.*
@@ -21,7 +20,7 @@ Estes desafios está organizado da seguinte forma:
 ```
 
 ---
-## Motivos pelos quais decide por essas ferramentas:
+## Motivos pelos quais decidi por essas ferramentas:
 
 As escolhas foram baseadas na utilização futura dessas automações em integrações CI/CD futuras. Utilizei as melhores práticas na hora de escrita e organização de código, a fim de evitar repetições ou trechos desnecessários.
 
