@@ -1,0 +1,185 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 3,
+    "pending": 0,
+    "failures": 2,
+    "start": "2022-05-02T22:01:58.086Z",
+    "end": "2022-05-02T22:02:02.646Z",
+    "duration": 4560,
+    "testsRegistered": 5,
+    "passPercent": 60,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "f161c508-e0ed-41a6-8326-f6a7a90f2c17",
+      "title": "",
+      "fullFile": "/home/alexander.ribeiro/Estudos/desafio-qa/desafio-04-automacao-backend/test/cadastro-funcionario-positivo.spec.js",
+      "file": "/test/cadastro-funcionario-positivo.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "7638b50e-cdc4-48e0-b220-2d07983bd935",
+          "title": "Funcionalidade: Cadastro de Funcionários - Positivos",
+          "fullFile": "/home/alexander.ribeiro/Estudos/desafio-qa/desafio-04-automacao-backend/test/cadastro-funcionario-positivo.spec.js",
+          "file": "/test/cadastro-funcionario-positivo.spec.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Cenário: Buscar registros de funcionários",
+              "fullTitle": "Funcionalidade: Cadastro de Funcionários - Positivos Cenário: Buscar registros de funcionários",
+              "timedOut": false,
+              "duration": 988,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Quando desejar buscar todos os registros de funcionários\nrequest\n    .get('/v1/employees')\n    .end((error, response) => {\n        try {\n            // Então todos os registros de funcionários devem ser retornados na pesquisa\n            expect(response.body);\n            // E o seu Status Code deve ser igual à 200 (OK)\n            expect(response).to.have.status(200);\n            // Validando os dados (jsonSchema)\n            expect(response.body).to.be.jsonSchema(schemaAllEmployees);\n            // Validando o retorno do campo \"status\"\n            expect(response.body.status).to.be.equal('success')\n            // Validando o retorno do campo \"message\"\n            expect(response.body.message).to.be.equal('Successfully! All records has been fetched.');\n        } catch (error) {\n            throw new Error('Failed')\n        }\n        done();\n    })",
+              "err": {},
+              "uuid": "b0c70f07-d66d-4f42-b9af-794bed453524",
+              "parentUUID": "7638b50e-cdc4-48e0-b220-2d07983bd935",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Cenário: Buscar registro de um funcionário (por ID)",
+              "fullTitle": "Funcionalidade: Cadastro de Funcionários - Positivos Cenário: Buscar registro de um funcionário (por ID)",
+              "timedOut": false,
+              "duration": 951,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "// Quando desejar buscar um registro de funcionário válido\nrequest\n    .get(`/v1/employee/${faker.random.number({ min: 01, max: 24 })}`)\n    .end((error, response) => {\n        try {\n            // Então os dados do funcionário devem ser retornados na pesquisa\n            expect(response.body);\n            // E o seu Status Code deve ser igual à 200 (OK)\n            expect(response).to.have.status(200);\n            // Validando os dados (jsonSchema)\n            expect(response.body).to.be.jsonSchema(schemaEmployee);\n            // Validando o retorno do campo \"status\"\n            expect(response.body.status).to.be.equal('success')\n            // Validando o retorno do campo \"message\"\n            expect(response.body.message).to.be.equal('Successfully! Record has been fetched.');\n        } catch (error) {\n            throw new Error('Failed')\n        }\n        done();\n    })",
+              "err": {
+                "message": "Error: Failed",
+                "estack": "Error: Failed\n    at /home/alexander.ribeiro/Estudos/desafio-qa/desafio-04-automacao-backend/test/cadastro-funcionario-positivo.spec.js:83:27\n    at Test.Request.callback (node_modules/superagent/lib/node/index.js:716:12)\n    at Stream.<anonymous> (node_modules/superagent/lib/node/index.js:916:18)\n    at Unzip.<anonymous> (node_modules/superagent/lib/node/unzip.js:55:12)\n    at endReadableNT (internal/streams/readable.js:1327:12)\n    at processTicksAndRejections (internal/process/task_queues.js:80:21)",
+                "diff": null
+              },
+              "uuid": "655f878f-555b-49e3-b6e8-3ee0e3237b2b",
+              "parentUUID": "7638b50e-cdc4-48e0-b220-2d07983bd935",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Cenário: Criar registro de funcionário",
+              "fullTitle": "Funcionalidade: Cadastro de Funcionários - Positivos Cenário: Criar registro de funcionário",
+              "timedOut": false,
+              "duration": 864,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Quando desejar criar um novo registro de funcionário\nrequest\n    .post('/v1/create')\n    .send({\n        \"name\": nomeCompleto,\n        \"salary\": salario,\n        \"age\": idade\n    })\n    .end((error, response) => {\n        try {\n            // Então os dados do novo funcionário devem ser retornados\n            expect(response.body);\n            // E o seu Status Code deve ser igual à 200 (OK)\n            expect(response).to.have.status(200);\n            // Validando os dados (jsonSchema)\n            expect(response.body).to.be.jsonSchema(schemaCreateEmployee);\n            // Validando o retorno do campo \"status\"\n            expect(response.body.status).to.be.equal('success')\n            // Validando o retorno do campo \"data.name\"\n            expect(response.body.data.name).to.be.equal(nomeCompleto);\n            // Validando o retorno do campo \"data.salary\"\n            expect(response.body.data.salary).to.be.equal(salario);\n            // Validando o retorno do campo \"data.age\"\n            expect(response.body.data.age).to.be.equal(idade);\n            // Validando o retorno do campo \"message\"\n            expect(response.body.message).to.be.equal('Successfully! Record has been added.');\n        } catch (error) {\n            throw new Error('Failed')\n        }\n        done();\n    })",
+              "err": {},
+              "uuid": "74246750-07cc-4d49-b043-ab57a25c6b33",
+              "parentUUID": "7638b50e-cdc4-48e0-b220-2d07983bd935",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Cenário: Atualizar registro de funcionário (por ID)",
+              "fullTitle": "Funcionalidade: Cadastro de Funcionários - Positivos Cenário: Atualizar registro de funcionário (por ID)",
+              "timedOut": false,
+              "duration": 862,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "// Quando desejar atualizar um registro de um funcionário válido\nrequest\n    .put(`/v1/update/${faker.random.number({ min: 01, max: 24 })}`)\n    .send({\n        \"name\": nomeCompleto,\n        \"salary\": salario,\n        \"age\": idade\n    })\n    .end((error, response) => {\n        try {\n            // Então os dados do novo funcionário devem ser retornados\n            expect(response.body);\n            // E o seu Status Code deve ser igual à 200 (OK)\n            expect(response).to.have.status(200);\n            // Validando os dados (jsonSchema)\n            expect(response.body).to.be.jsonSchema(schemaUpdateEmployee);\n            // Validando o retorno do campo \"status\"\n            expect(response.body.status).to.be.equal('success')\n            // Validando o retorno do campo \"data.name\"\n            expect(response.body.data.name).to.be.equal(nomeCompleto);\n            // Validando o retorno do campo \"data.salary\"\n            expect(response.body.data.salary).to.be.equal(salario);\n            // Validando o retorno do campo \"data.age\"\n            expect(response.body.data.age).to.be.equal(idade);\n            // Validando o retorno do campo \"message\"\n            expect(response.body.message).to.be.equal('Successfully! Record has been updated.');\n        } catch (error) {\n            throw new Error('Failed')\n        }\n        done();\n    })",
+              "err": {
+                "message": "Error: Failed",
+                "estack": "Error: Failed\n    at /home/alexander.ribeiro/Estudos/desafio-qa/desafio-04-automacao-backend/test/cadastro-funcionario-positivo.spec.js:170:27\n    at Test.Request.callback (node_modules/superagent/lib/node/index.js:716:12)\n    at Stream.<anonymous> (node_modules/superagent/lib/node/index.js:916:18)\n    at Unzip.<anonymous> (node_modules/superagent/lib/node/unzip.js:55:12)\n    at endReadableNT (internal/streams/readable.js:1327:12)\n    at processTicksAndRejections (internal/process/task_queues.js:80:21)",
+                "diff": null
+              },
+              "uuid": "4a08af64-c547-4a69-b4fe-64ebd6924f60",
+              "parentUUID": "7638b50e-cdc4-48e0-b220-2d07983bd935",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Cenário: Excluir registro de funcionário (por ID)",
+              "fullTitle": "Funcionalidade: Cadastro de Funcionários - Positivos Cenário: Excluir registro de funcionário (por ID)",
+              "timedOut": false,
+              "duration": 881,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Quando desejar excluir um registro de um funcionário válido\nrequest\n    .delete(`/v1/delete/${faker.random.number({ min: 01, max: 24 })}`)\n    .end((error, response) => {\n        try {\n            expect(response.body);\n            // E o seu Status Code deve ser igual à 200 (OK)\n            expect(error).to.be.null;\n            expect(response).to.have.status(200);\n            // Validando os dados (jsonSchema)\n            expect(response.body).to.be.jsonSchema(schemaDeleteEmployee);\n            // Validando o retorno do campo \"status\"\n            expect(response.body.status).to.be.equal('success')\n            // Validando o retorno do campo \"message\"\n            expect(response.body.message).to.be.equal('Successfully! Record has been deleted');\n        } catch (error) {\n            throw new Error('Failed')\n        }\n        done();\n    })",
+              "err": {},
+              "uuid": "632643d7-52e0-4796-a789-afeda620d703",
+              "parentUUID": "7638b50e-cdc4-48e0-b220-2d07983bd935",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "b0c70f07-d66d-4f42-b9af-794bed453524",
+            "74246750-07cc-4d49-b043-ab57a25c6b33",
+            "632643d7-52e0-4796-a789-afeda620d703"
+          ],
+          "failures": [
+            "655f878f-555b-49e3-b6e8-3ee0e3237b2b",
+            "4a08af64-c547-4a69-b4fe-64ebd6924f60"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 4546,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 10000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 10000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "10.0.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}
