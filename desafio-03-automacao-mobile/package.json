@@ -1,0 +1,20 @@
+{
+  "name": "desafio-03-automacao-mobile",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "android": "PLATFORM='Android' APP='/app/cadastro_clientes_teste.apk' DEVICE='pixel' VERSION='9' ACTIVITY='MainClientes' PACKAGE='br.com.dudstecnologia.cadastrodeclientes' npx codeceptjs run --steps --reporter mochawesome"
+  },
+  "keywords": [],
+  "author": "Alexander Ribeiro <alexander.ribeiro@gmail.com> (https://www.linkedin.com/in/alexander2005rj/)",
+  "license": "ISC",
+  "dependencies": {
+    "codeceptjs": "^3.3.2",
+    "webdriverio": "^7.19.5"
+  },
+  "devDependencies": {
+    "faker-br": "^0.4.1",
+    "mochawesome": "^7.1.3"
+  }
+}
