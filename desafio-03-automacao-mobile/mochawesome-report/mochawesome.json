@@ -1,0 +1,230 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-05-03T13:40:27.091Z",
+    "end": "2022-05-03T13:42:12.693Z",
+    "duration": 105602,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "97f16ea5-4060-402f-9476-c4db803d3125",
+      "title": "",
+      "fullFile": "/home/alexander.ribeiro/Estudos/desafio-qa/desafio-03-automacao-mobile/tests/cadastrarClientes_test.js",
+      "file": "/tests/cadastrarClientes_test.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "109f0180-71ff-46d5-baa8-98dbc3b27819",
+          "title": "Cadastrar Novo Cliente",
+          "fullFile": "/home/alexander.ribeiro/Estudos/desafio-qa/desafio-03-automacao-mobile/tests/cadastrarClientes_test.js",
+          "file": "/tests/cadastrarClientes_test.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook: codeceptjs.beforeSuite in \"Cadastrar Novo Cliente\"",
+              "fullTitle": "Cadastrar Novo Cliente \"before all\" hook: codeceptjs.beforeSuite in \"Cadastrar Novo Cliente\"",
+              "timedOut": false,
+              "duration": 2,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "scenario.suiteSetup(suite)",
+              "err": {},
+              "uuid": "1320d92d-df88-4c64-a582-825faa8fad2b",
+              "parentUUID": "109f0180-71ff-46d5-baa8-98dbc3b27819",
+              "isHook": true,
+              "skipped": false
+            },
+            {
+              "title": "\"before each\" hook: codeceptjs.before in \"Cadastrar Novo Cliente\"",
+              "fullTitle": "Cadastrar Novo Cliente \"before each\" hook: codeceptjs.before in \"Cadastrar Novo Cliente\"",
+              "timedOut": false,
+              "duration": 4371,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "scenario.setup(suite)",
+              "err": {},
+              "uuid": "f4982e04-5776-4fac-9940-d19430ae2822",
+              "parentUUID": "109f0180-71ff-46d5-baa8-98dbc3b27819",
+              "isHook": true,
+              "skipped": false
+            },
+            {
+              "title": "\"before each\" hook: Before in \"Cadastrar Novo Cliente\"",
+              "fullTitle": "Cadastrar Novo Cliente \"before each\" hook: Before in \"Cadastrar Novo Cliente\"",
+              "timedOut": false,
+              "duration": 7,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Definindo um novo nome a cada teste\nnomeCompleto = `${faker.name.firstName()} ${faker.name.lastName()}`",
+              "err": {},
+              "uuid": "3d9028f1-251a-4088-9b3f-37051b5124b7",
+              "parentUUID": "109f0180-71ff-46d5-baa8-98dbc3b27819",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after all\" hook: codeceptjs.afterSuite in \"Cadastrar Novo Cliente\"",
+              "fullTitle": "Cadastrar Novo Cliente \"after all\" hook: codeceptjs.afterSuite in \"Cadastrar Novo Cliente\"",
+              "timedOut": false,
+              "duration": 1,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "scenario.suiteTeardown(suite)",
+              "err": {},
+              "uuid": "613e891b-1a9d-400a-a2de-90f91d4189d6",
+              "parentUUID": "109f0180-71ff-46d5-baa8-98dbc3b27819",
+              "isHook": true,
+              "skipped": false
+            },
+            {
+              "title": "\"after each\" hook: finalize codeceptjs in \"Cadastrar Novo Cliente\"",
+              "fullTitle": "Cadastrar Novo Cliente \"after each\" hook: finalize codeceptjs in \"Cadastrar Novo Cliente\"",
+              "timedOut": false,
+              "duration": 260,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "scenario.teardown(suite)",
+              "err": {},
+              "uuid": "6a54a558-7928-4e11-87ef-9ce9901dff42",
+              "parentUUID": "109f0180-71ff-46d5-baa8-98dbc3b27819",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "Cadastrar Novo - Básico",
+              "fullTitle": "Cadastrar Novo Cliente: Cadastrar Novo - Básico",
+              "timedOut": false,
+              "duration": 26003,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "\"../output/cadastro-novo-cliente-1570.png\"",
+              "code": "sistemaPage.tapAllowPermission();\n    homePage.tapOnAbrirAcoes();\n    homePage.tapOnCadastrarNovo();\n    cadastroPage.fillCadastroBasico(nomeCompleto);\n    cadastroPage.checkCadastroSucesso('Cadastro efetuado com sucesso');\n    cadastroPage.takeScreenShot('cadastro-novo-cliente');",
+              "err": {},
+              "uuid": "34f21267-6272-437c-a0be-1867327f8d87",
+              "parentUUID": "109f0180-71ff-46d5-baa8-98dbc3b27819",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Pesquisar Clientes",
+              "fullTitle": "Cadastrar Novo Cliente: Pesquisar Clientes",
+              "timedOut": false,
+              "duration": 30423,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "\"../output/pesquisar-clientes-94549.png\"",
+              "code": "sistemaPage.tapAllowPermission();\n    homePage.tapOnAbrirAcoes();\n    homePage.tapOnCadastrarNovo();\n    cadastroPage.fillCadastroBasico(nomeCompleto);\n    cadastroPage.checkCadastroSucesso('Cadastro efetuado com sucesso');\n    cadastroPage.tapOnOK();\n    homePage.searchCliente(nomeCompleto);\n    homePage.checkSearch(nomeCompleto);\n    homePage.takeScreenShot('pesquisar-clientes');",
+              "err": {},
+              "uuid": "f9755d2a-d965-414a-859c-68ac69a3986e",
+              "parentUUID": "109f0180-71ff-46d5-baa8-98dbc3b27819",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Excluir Clientes",
+              "fullTitle": "Cadastrar Novo Cliente: Excluir Clientes",
+              "timedOut": false,
+              "duration": 35101,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "\"../output/excluir-cliente-94549.png\"",
+              "code": "sistemaPage.tapAllowPermission();\n    homePage.tapOnAbrirAcoes();\n    homePage.tapOnCadastrarNovo();\n    cadastroPage.fillCadastroBasico(nomeCompleto);\n    cadastroPage.checkCadastroSucesso('Cadastro efetuado com sucesso');\n    cadastroPage.tapOnOK();\n    homePage.searchCliente(nomeCompleto);\n    homePage.clickClienteEncontrado();\n    cadastroPage.tapOnExcluir();\n    cadastroPage.checkPerguntaExclusao('Tem certeza que deseja excluir este cadastro?');\n    cadastroPage.tapOnSim();\n    homePage.checkCliente(nomeCompleto);\n    homePage.takeScreenShot('excluir-cliente');",
+              "err": {},
+              "uuid": "d9bd4c6f-7a26-41bb-998f-f42092cdae0e",
+              "parentUUID": "109f0180-71ff-46d5-baa8-98dbc3b27819",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "34f21267-6272-437c-a0be-1867327f8d87",
+            "f9755d2a-d965-414a-859c-68ac69a3986e",
+            "d9bd4c6f-7a26-41bb-998f-f42092cdae0e"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 91527,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 0
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 0
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "8.1.3"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {},
+      "version": "6.2.0"
+    }
+  }
+}
