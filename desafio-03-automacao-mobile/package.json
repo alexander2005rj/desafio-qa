@@ -11,7 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "codeceptjs": "^3.3.2",
-    "webdriverio": "^7.19.5"
+    "webdriverio": "^8.3.5"
   },
   "devDependencies": {
     "faker-br": "^0.4.1",
